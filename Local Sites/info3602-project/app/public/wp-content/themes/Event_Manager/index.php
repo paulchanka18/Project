@@ -12,7 +12,7 @@
       </div>
     </div>
   </div>
-  <div class="hero-slider__slide" style="height: auto; background-image: url(<?php echo get_theme_file_uri('images/demo/weddings.jpg'); ?>)">
+  <div class="hero-slider__slide" style="height: auto; background-image: url(<?php echo get_theme_file_uri('images/demo/weddings1.jpg'); ?>)">
     <div class=" hero-slider__interior container">
       <div class="hero-slider__overlay">
         <h2 class="headline headline--medium t-center">Event Planning solutions with imaginative design</h2>
@@ -32,7 +32,7 @@
   </div>
 </div>
 
-<!--<a href="#"><img src="<?php echo get_theme_file_uri("images/demo/corporate-events.jpg") ?>" alt="" style="max-width: 100%; height: auto;" /></a> -->
+
 
 
 <br class="clear" />

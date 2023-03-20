@@ -11,24 +11,29 @@ Licence URI: http://www.os-templates.com/template-terms
 <head>
     <?php wp_head(); ?>
     <title>Darkness</title>
-    <meta http-equiv="Content-Type" content="width=device-width, charset=iso-8859-1" />
+    <meta http-equiv="Content-Type" content="width=device-width, initial-scale =1" />
 </head>
 
 <body id="top">
     <div class="wrapper">
         <div id="header">
             <div id="logo">
-                <h1><a href="index.php">Darkness</a></h1>
-                <p>Free Website Template</p>
+                <h1><a href="index.php">Event Horizon</a></h1>
+                <p>The Best Event Managers in the Nation</p>
             </div>
             <div id="topnav">
-                <ul>
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="<?php site_url('/services') ?>">Services</a></li>
-                    <li><a href="pages/full-width.html">Full Width</a></li>
-                    <li><a href="#">Link Text</a></li>
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'headerMenuLocation',
+                ));
+                ?>
+                <!-- <ul>
+                    <li class="active"><a href=<?php echo site_url() ?>>Home</a></li>
+                    <li><a href="<?php echo site_url('/services') ?>">Services</a></li>
+                    <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
+                    <li><a href="#">Testimonials</a></li>
                     <li class="last"><a href="#">A Long Link Text</a></li>
-                </ul>
+                </ul> -->
             </div>
             <br class="clear" />
         </div>

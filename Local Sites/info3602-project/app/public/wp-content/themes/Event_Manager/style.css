@@ -18,7 +18,7 @@ table tbody tr.dark{color:#CCCCCC; background-color:#1E1E1E;}
 #header ul{margin:0; padding:0; list-style:none;}
 #header li{display:inline; margin-right:35px;}
 #header li a:link, #header li a:visited, #header li a:hover{margin:0; padding:0 3px 10px 3px; color:#FFFFFF; background-color:#232323; border-bottom:1px solid #232323;}
-#header li a:hover, #header li.active a{color:#FDC609; background-color:#232323; border-bottom-color:#FDC609;}
+#header li a:hover, #header li.active a,#header li a:active,#header li a:focus{color:#FDC609; background-color:#232323; border-bottom-color:#FDC609;}
 #header #topnav li.last{margin-right:0;}
 
 /* ----------------------------------------------Column Navigation------------------------------------- */
@@ -2553,7 +2553,7 @@ Version: 1.0
   }
   
   .metabox {
-    background-color: #FAF0CA;
+    background-color: black;
     border-radius: 3px;
     padding: 10px 15px;
     display: inline-block;
@@ -2567,6 +2567,16 @@ Version: 1.0
     top: 0;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
+  }
+
+  .metabox--position-side {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-100%, -50%);
   }
   
   .metabox--with-home-link {
@@ -2594,7 +2604,7 @@ Version: 1.0
   }
   
   .metabox .metabox__blog-home-link {
-    background-color: #0D3B66;
+    background-color: black;
     color: #FFF;
     display: inline-block;
     padding: 10px 15px;
@@ -2618,4 +2628,39 @@ Version: 1.0
     margin-bottom: 0;
   }
   
+  .img-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .text-banner {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .img-container:hover .text-banner {
+    transform: scale(1.5);
+    color: orange;
+  }
+
+  
+  .img-container img {
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
   
