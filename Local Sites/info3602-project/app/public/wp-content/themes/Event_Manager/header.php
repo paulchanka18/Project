@@ -22,13 +22,19 @@ Licence URI: http://www.os-templates.com/template-terms
                 <p>Free Website Template</p>
             </div>
             <div id="topnav">
-                <ul>
+
+                <?php
+                wp_nav_menu(array(
+                    'theme_location' => 'headerMenuLocation',
+                ));
+                ?>
+                <!--     <ul>
                     <li class="active"><a href="index.php">Home</a></li>
                     <li><a href="<?php site_url('/services') ?>">Services</a></li>
                     <li><a href="pages/full-width.html">Full Width</a></li>
                     <li><a href="#">Link Text</a></li>
                     <li class="last"><a href="#">A Long Link Text</a></li>
-                </ul>
+                </ul>-->
             </div>
             <br class="clear" />
         </div>

@@ -2197,6 +2197,12 @@ Version: 1.0
     -webkit-transform: scale(1.1) rotate(4deg);
             transform: scale(1.1) rotate(4deg);
   }
+
+  .professor-card:hover .professor-card__image_mine {
+    opacity: .80;
+    transform: scale(1.5) rotate(4deg);
+    transform-origin: 100% 50%;
+  }
   
   .professor-card__name {
     font-weight: 300;
@@ -2358,6 +2364,10 @@ Version: 1.0
       font-size: 1.15rem;
     }
   }
+
+  .push-left {
+    margin-right: 190px;
+  }
   
   @media (min-width: 960px) {
   
@@ -2373,6 +2383,7 @@ Version: 1.0
         -ms-flex: 1;
             flex: 1;
     padding: 1.6rem 16px;
+    background-color: white;
   }
   
   @media (min-width: 960px) {
@@ -2617,5 +2628,80 @@ Version: 1.0
     border-bottom: none;
     margin-bottom: 0;
   }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: calc(100vh - 50px); /* 50px is the assumed height of the navbar */
+  }
+
+  .col {
+    flex-basis: 50%;
+    height: 100%;
+    position: relative;
+  }
+
+  .col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  .col:hover .banner,
+  .col:focus .banner {
+    background-color: #ffa500; /* change to desired highlight color */
+    transform: scaleY(1.2);
+  }
+
+  .fl_left {
+    float: left;
+    margin-right: 55px;
+  }
   
+  .event-summary__content {
+    overflow: hidden;
+  }
   
+  .event-summary__content .excerpt {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .rounded-image {
+    border-radius: 50%;
+}
+
+.event-summary {
+  margin-bottom: 30px; /* add a margin-bottom to space out each post */
+  overflow: hidden; /* add overflow to clear floated elements */
+}
+
+.event-summary::after {
+  content: "";
+  display: table;
+  clear: both; /* clear floated elements */
+}
