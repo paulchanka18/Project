@@ -5,7 +5,7 @@ while (have_posts()) {
 
     <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php $pageBannerImage = get_field('page_banner_background_image');
-        echo $pageBannerImage['sizes']['pageBanner'];;?> );">
+                                                                        echo $pageBannerImage['sizes']['pageBanner'];; ?> );">
         </div>
         <div class="page-banner__content container container--narrow">
             <h1 class="page-banner__title"><?php the_title() ?></h1>
@@ -38,13 +38,13 @@ while (have_posts()) {
         <div class="col">
             <a href="<?php echo site_url('/event-production') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/Event_Production.jpg") ?>">
-                <div class="banner">Image 1</div>
+                <div class="banner">Event Production</div>
             </a>
         </div>
         <div class="col">
             <a href="<?php echo site_url('/corporate-meetings') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/Corporate-Events-DJ.jpg") ?>">
-                <div class="banner">Image 2</div>
+                <div class="banner">Corporate Events</div>
             </a>
         </div>
     </div>
@@ -52,13 +52,13 @@ while (have_posts()) {
         <div class="col">
             <a href="<?php echo site_url('/motivation-tour') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/Motivational-Tour.jpg") ?>">
-                <div class="banner">Image 3</div>
+                <div class="banner">Motivational Tour</div>
             </a>
         </div>
         <div class="col">
             <a href="<?php echo site_url('/product-launch') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/Product_Launch.jpg") ?>">
-                <div class="banner">Image 4</div>
+                <div class="banner">Production Launch</div>
             </a>
         </div>
     </div>
@@ -66,13 +66,13 @@ while (have_posts()) {
         <div class="col">
             <a href="<?php echo site_url('/team-building') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/Team-Building.jpg") ?>">
-                <div class="banner">Image 5</div>
+                <div class="banner">Team Building</div>
             </a>
         </div>
         <div class="col">
             <a href="<?php echo site_url('/concert') ?>">
                 <img src="<?php echo get_theme_file_uri("/images/demo/concert.jpg") ?>">
-                <div class="banner">Image 6</div>
+                <div class="banner">Concert</div>
             </a>
         </div>
     </div>

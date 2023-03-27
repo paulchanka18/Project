@@ -1,18 +1,18 @@
 <?php get_header(); ?>
 
 <div class="page-banner">
-<div class="page-banner__bg-image" style="background-image: url(<?php $pageBannerImage = get_field('page_banner_background_image');
- echo $pageBannerImage['sizes']['pageBanner'];;
- ?> );">
-</div>
+    <div class="page-banner__bg-image" style="background-image: url(<?php $pageBannerImage = get_field('page_banner_background_image');
+                                                                    echo $pageBannerImage['sizes']['pageBanner'];;
+                                                                    ?> );">
+    </div>
     <div class="page-banner__content container container--narrow">
         <h1 class="page-banner__title"> <!-- hollow -->
             <?php
-            echo "All Events"
+            echo "Past Events"
             ?>
         </h1>
         <div class="page-banner__intro">
-            <p><?php echo "Come take a look into our world" ?></p>
+            <p><?php echo "Come take a look at our past events" ?></p>
         </div>
     </div>
 </div>
@@ -21,15 +21,11 @@
         the_post(); ?>
 
         <div class="event-summary">
-            <a class="event-summary__date event-summary__date t-center" href="<?php the_permalink(); ?>">
-                <span class="event-summary__month">
-                    <?php $eventDate = new DateTime(get_field('event_date'));
-                    echo $eventDate->format('M'); ?>
-                </span>
-                <span class="event-summary__day">
-                    <?php $eventDate = new DateTime(get_field('event_date'));
-                    echo $eventDate->format('d'); ?>
-                </span>
+            <a href="<?php the_permalink() ?>">
+                <div class="fl_left push-left">
+                    <img class="professor-card__image  dynamic" src="<?php the_post_thumbnail_url('front_page'); ?>">
+                </div>
+
             </a>
             <div class="event-summary__content">
                 <h5 class="event-summary__title headline headline--tiny">

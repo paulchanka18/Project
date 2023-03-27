@@ -2299,7 +2299,7 @@ Version: 1.0
   }
   
   .generic-content p, .generic-content li {
-    font-size: 1.15rem;
+    font-size: 15px;
   }
   
   .generic-content blockquote, .generic-content blockquote p {
@@ -2705,3 +2705,307 @@ Version: 1.0
   display: table;
   clear: both; /* clear floated elements */
 }
+.event-services {
+  background-color:  gray; /* light grey */
+  padding: 20px; /* add some padding to make the text easier to read */
+}
+
+
+
+/*.services img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}*/
+
+.services p {
+  text-align: center;
+}
+
+.row1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column1 {
+  width: 33%;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.column1 img {
+  display: block;
+  margin: auto;
+  object-fit: cover;
+}
+
+.column1 p {
+  margin-top: 10px;
+}
+
+
+
+.services .row1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.services .row1 .column1 {
+  flex-basis: calc(100% / 3 - 20px);
+  margin: 10px;
+}
+.img_holder {
+  width: 100%;
+  height: 300px; /* change this value as needed */
+  overflow: hidden;
+}
+
+.img_holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.post-cell {
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.post-image {
+  width: 30%;
+  margin-right: 20px;
+  float: left;
+}
+
+.post-content {
+  width: 70%;
+  float: right;
+  margin-top: 0; /* Remove default top margin */
+}
+
+
+/*TRIAL MA BOY
+
+.professor-card__image1 {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+  transform: rotate(45deg);
+}
+
+.professor-card__image1 img {
+  display: block;
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-45deg);
+}
+
+.professor-card__image1:hover img {
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+}
+*/
+
+/*Callendar*/
+/* Calendar Styles 
+.calendar {
+  border-collapse: collapse;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.calendar th,
+.calendar td {
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.calendar th {
+  background-color: #ccc;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.calendar td {
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.calendar td:hover {
+  background-color: #eee;
+}
+
+.calendar td.today {
+  background-color: #f0f0f0;
+}
+
+.calendar td.booked {
+  background-color: #ffcccc;
+}
+
+.calendar td.selected {
+  background-color: #a0a0a0;
+  color: #fff;
+}
+
+.calendar .prev-month,
+.calendar .next-month {
+  color: #ccc;
+}
+
+.calendar .prev-month:hover,
+.calendar .next-month:hover {
+  color: #999;
+  cursor: pointer;
+}
+
+.calendar .month-year {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.calendar .year-nav {
+  float: right;
+  font-size: 14px;
+}
+
+.calendar-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.calendar-table {
+  width: 100%;
+  max-width: 800px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.calendar-header,
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.calendar-header {
+  background-color: lightgray;
+}
+
+.calendar-day:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}*/
+
+
+
+
+
+/*NEW
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.calendar-table {
+  border-collapse: collapse;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+}
+.calendar-header {
+  background-color: gray;
+}
+.calendar-header, .calendar-day {
+  border: 1px solid #000;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.booked-day {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}*/
+
+/* Style for the calendar table */
+.calendar-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style for the table headers */
+.calendar-header {
+  background-color: #eee;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Style for the calendar cells */
+.calendar-table td {
+  border: 1px solid #ccc;
+  height: 100px;
+  position: relative;
+}
+
+/* Style for the booked cells */
+.calendar-table td.booked {
+  background-color: #000;
+}
+
+/* Style for the booked text */
+.booked-text {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calendar-table thead tr th {
+  background-color: #ccc;
+}
+
+.calendar-table thead tr th {
+  background-color: #ccc;
+}
+
+
+
+
