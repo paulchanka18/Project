@@ -103,7 +103,7 @@ if ($nextMonth == 13) {
                         if ($booked) {
                             echo "<td class='booked'>{$day}</td>";
                         } else {
-                            echo "<td class='available'><a href='" . site_url('/form') . "'>Available</a></td>";
+                            echo "<td class='available'><a href='" . site_url('/form') . "'>" . $day . "<br>Available</a></td>";
                         }
                         $day++;
                         if ($day > $numDays) {
@@ -118,4 +118,6 @@ if ($nextMonth == 13) {
         </tbody>
     </table>
 </div>
+
+
 <?php get_footer() ?>

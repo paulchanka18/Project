@@ -57,7 +57,7 @@ while (have_posts()) {
             <div style=" clear: both;">
             </div>
             <div class="services">
-                <h3 class="event-services" style="margin-top:50px;text-align:center; "><b>Our Corporate Event Services</b></h3>
+                <h3 class="event-services" style="margin-top:50px;text-align:center; "><b>Our <?php echo the_title() ?> Services</b></h3>
                 <div class="row1" style=margin-bottom:50px>
                     <div class="column1">
                         <div class="img_holder">

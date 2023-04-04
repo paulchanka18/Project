@@ -5,6 +5,8 @@
 function project_post_types()
 {
     register_post_type('past-events', array(
+        'capability_type' => 'past-events',
+        'map_meta_cap' => true,
         'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'),
         'rewrite' => array('slug' => 'past-events'),
         'has_archive' => true,
@@ -21,6 +23,8 @@ function project_post_types()
 
 
     register_post_type('reviews', array(
+        'capability_type' => 'reviews',
+        'map_meta_cap' => true,
         'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'),
         'rewrite' => array('slug' => 'reviews'),
         'has_archive' => true,
@@ -36,6 +40,8 @@ function project_post_types()
     ));
 
     register_post_type('staff_member', array(
+        'capability_type' => 'staff_member',
+        'map_meta_cap' => true,
         'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'),
         'rewrite' => array('slug' => 'staff_member'),
         'has_archive' => true,
@@ -48,6 +54,23 @@ function project_post_types()
             'singular_name' => "Staff_Member"
         ),
         'menu_icon' => 'dashicons-welcome-learn-more'
+    ));
+
+    register_post_type('venues', array(
+        'capability_type' => 'venues',
+        'map_meta_cap' => true,
+        'supports' => array('title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'),
+        'rewrite' => array('slug' => 'venues'),
+        'has_archive' => true,
+        'public' => true,
+        'labels' => array(
+            'name' => "Venues",
+            'add_new_item' => 'Add Latest Venue',
+            'edit_item' => 'Edit Venue',
+            'all_items' => 'All Venue',
+            'singular_name' => "Venue"
+        ),
+        'menu_icon' => 'dashicons-awards'
     ));
 }
 

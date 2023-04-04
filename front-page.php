@@ -73,8 +73,7 @@
             <?php
 
             }
-            wp_reset_postdata();
-            wp_reset_query();
+
             ?>
 
 
@@ -88,22 +87,31 @@
         <div class="full-width-split__inner">
             <h2 class="headline headline--small-plus t-center"> Our Reviews</h2>
 
+            <?php wp_reset_postdata(); ?>
 
-            <?php $homepagePosts = new WP_Query(array(
-                'posts_per_page' => 2,
-                'post_in' => array(3, 7, 12)
+            <?php
+
+            $homepagePosts = new WP_Query(array(
+                'post__in' => array(137, 108),
+                'posts_per_page' => 2
 
             ));
             while ($homepagePosts->have_posts()) {
                 $homepagePosts->the_post(); ?>
-                <li><?php the_title(); ?></li>
+
                 <div class="event-summary">
                     <a class="event-summary__date event-summary__date--beige t-center" href="<?php the_permalink() ?>">
                         <span class="event-summary__month">
-                            <?php the_time('M') ?>
+                            <?php $eventDate = new DateTime(get_field('review_date'));
+                            echo $eventDate->format('M') ?>
                         </span>
                         <span class="event-summary__day">
-                            <?php the_time('d') ?>
+                            <?php $eventDate = new DateTime(get_field('review_date'));
+                            echo $eventDate->format('d') ?>
+                        </span>
+                        <span class="event-summary__month">
+                            <?php $eventDate = new DateTime(get_field('review_date'));
+                            echo $eventDate->format('Y') ?>
                         </span>
                     </a>
                     <div class="event-summary__content">

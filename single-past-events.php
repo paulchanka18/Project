@@ -4,7 +4,9 @@ while (have_posts()) {
     the_post();
 ?>
 
-    <div class="page-banner" style="margin-bottom :50px">
+
+
+    <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php $pageBannerImage = get_field('page_banner_background_image');
                                                                         echo $pageBannerImage['sizes']['pageBanner'];; ?> );">
         </div>
@@ -13,13 +15,22 @@ while (have_posts()) {
 
             <div class="page-banner__intro">
                 <p style="font-color:white"><?php the_title() ?></p>
-
             </div>
+
         </div>
+
+    </div>
+
+    <div class="metabox  metabox--with-home-link" style=margin-left:120px>
+        <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('past-events') ?>">
+                <i class="fa fa-home" aria-hidden="true"></i> Back to All Events</a>
+            <span class="metabox__main"><?php echo the_title(); ?></span>
+        </p>
     </div>
 
     <div>
         <div>
+
             <h1> <?php the_content(); ?> </h1>
         </div>
         <div style="text-align: center;">
@@ -73,9 +84,98 @@ while (have_posts()) {
         }
         ?>
     </div>
+    <?php wp_reset_postdata(); ?>
+    </div>
+    <h1 class="event-services" style="margin-top:50px;text-align:center; "><b>Event Location</b></h1>
+    </div>
+
+    <div class="venue_container">
+        <?php
+        $relatedVenues = new WP_Query(array(
+            'posts_per_page' => -1,
+            'post_type' => 'venues',
+            'oderby' => 'title',
+            'order' => 'ASC',
+            'meta_query' => array(
+                array(
+                    'key' => 'related_events',
+                    'compare' => 'LIKE',
+                    'value' => '"' . get_the_ID() . '"'
+                )
+            )
+        ));
+
+        if ($relatedVenues->have_posts()) {
+            echo '<hr class="section-break">';
+
+            while ($relatedVenues->have_posts()) {
+                $relatedVenues->the_post(); ?>
+                <div class="venue_things" style="margin-top:50px;text-align:center; ">
+                    <h1> <?php the_title() ?> </h1>
+                </div>
+                <div class="venue_image">
+                    <img src="<?php $pageImage1 = get_field('image1');
+                                echo $pageImage1['url'];
+                                ?>">
+                </div>
+        <?php
+            }
+        }
+        ?>
+    </div>
+    <?php wp_reset_postdata(); ?>
+    </div>
+    <h1 class="event-services" style="margin-top:50px;text-align:center; "><b>Event's Reviews</b></h1>
+    </div>
+
+
+
+    <div>
+        <?php
+        // Get the current post ID
+        $post_id = get_the_ID();
+
+        // Get the Related Reviews custom field for the current post
+        $related_reviews = get_post_meta($post_id, 'related_reviews', true);
+
+        // If there are related reviews, display them
+        if (!empty($related_reviews)) {
+            // Create a new query to retrieve the related reviews
+            $args = array(
+                'post_type' => 'post',
+                'post__in' => $related_reviews,
+                'orderby' => 'post__in',
+                'posts_per_page' => -1 // Display all related reviews
+            );
+            $related_reviews_query = new WP_Query($args);
+
+            // Display the related reviews
+            if ($related_reviews_query->have_posts()) {
+                while ($related_reviews_query->have_posts()) {
+                    $related_reviews_query->the_post();
+                    echo '<div class="dont-color">';
+                    echo '<h3><a href="' . get_permalink() . '" style="color: black; margin-bottom:20px">' . get_the_title() . '</a></h3>';
+                    echo '<p>' . get_the_content() . '</p>';
+                    echo '<hr>';
+                    echo '</div>';
+                }
+            }
+
+
+            // Reset the query to the current post
+            wp_reset_postdata();
+        }
+        ?>
+
+    </div>
 
 
 
 
-<?php }
-get_footer(); ?>
+
+
+<?php
+
+}
+get_footer()
+?>

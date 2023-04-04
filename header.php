@@ -6,19 +6,22 @@ Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
 -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" , <?php language_attributes(); ?>>>
 
 <head>
     <?php wp_head(); ?>
     <title>Horizons</title>
     <meta http-equiv="Content-Type" content="width=device-width, charset=iso-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale =1">
 </head>
 
 <body id="top">
     <div class="wrapper">
         <div id="header">
             <div id="logo">
-                <h1><a href="<?php echo site_url("/home")?>">Horizons Event Management</a></h1>
+                <a href="<?php echo site_url("/home") ?>">
+                    <h1>Horizons Event Management</h1>
+                </a>
                 <p>Your Dream Event, Delivered</p>
             </div>
             <div id="topnav">
@@ -29,24 +32,25 @@ Licence URI: http://www.os-templates.com/template-terms
                 ));
                 ?>
 
-                
-    <div class="site-header__util">
-        <?php
-            if(is_user_logged_in()){?>
-            <a href="<?php echo wp_logout_url(); ?>" class="btn btn--small btn--dark-orange float-left btn--with-photo”>">
-            <span class="site-header__avatar"><?php get_avatar(get_current_user_id(), 60); ?></span>
-            <span class="btn__text">Log Out</span>
-            </a>
-            <?php    
-            }
-            else{ ?>
-            <a href="<?php echo wp_login_url();?>" class="btn btn--small btn--orange float-left push-right">Login</a>
-            <a href="<?php echo wp_registration_url(); ?>" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
 
-           
-            <?php }
-            ?>
-        </div>
+                <div class="site-header__util">
+                    <?php
+                    if (is_user_logged_in()) { ?>
+                        <a href="<?php echo wp_logout_url(); ?>" class="btn btn--small btn--dark-orange float-left btn--with-photo”>">
+                            <span class="site-header__avatar"><?php get_avatar(get_current_user_id(), 60); ?></span>
+                            <span class="btn__text">Log Out</span>
+                        </a>
+
+
+
+                    <?php
+                    } else { ?>
+                        <a href="<?php echo wp_login_url(); ?>" class="btn btn--small btn--orange float-left push-right">Login</a>
+                        <a href="<?php echo wp_registration_url(); ?>" class="btn btn--small btn--dark-orange float-left">Sign Up</a>
+
+                    <?php }
+                    ?>
+                </div>
 
 
                 <!--     <ul>

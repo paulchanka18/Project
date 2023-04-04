@@ -16,6 +16,14 @@
         </div>
     </div>
 </div>
+
+<div class="metabox  metabox--with-home-link" style=margin-left:120px>
+    <p><a class="metabox__blog-home-link" href="<?php echo site_url('/home') ?>">
+            <i class="fa fa-home" aria-hidden="true"></i> Back to Home</a>
+        <span class="metabox__main">Our Past Events</span>
+    </p>
+</div>
+
 <div class="container container--narrow page-section">
     <?php while (have_posts()) {
         the_post(); ?>

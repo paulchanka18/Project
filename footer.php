@@ -1,6 +1,8 @@
 <footer>
     <div id="footer">
-        <div id="newsletter">
+
+    
+        <!-- <div id="newsletter">
             <h2>Stay In The Know !</h2>
             <p>Please enter your email to join our mailing list</p>
             <form action="#" method="post">
@@ -11,7 +13,9 @@
                 </fieldset>
             </form>
             <p>To unsubscribe please <a href="#">click here &raquo;</a></p>
-        </div>
+        </div> -->
+
+
         <div class="footbox">
             <h2>Connect With Us</h2>
             <ul>
@@ -27,9 +31,9 @@
         <div class="footbox">
             <h2>Find Events</h2>
             <ul>
-                <li><a href="#">North Region Credit Union Christmas Dinner</a></li>
-                <li><a href="#">BMW X12 Prototype Launch</a></li>
-                <li><a href="#">Caricom Annual Meeting</a></li>
+                <li><a href="/past-events/north-region-credit-union-christmas-dinner">North Region Credit Union Christmas Dinner</a></li>
+                <li><a href="/past-events/bmw-x12-prototype-launch">BMW X12 Prototype Launch</a></li>
+                <li><a href="/past-events/caricom-annual-meeting">Caricom Annual Meeting</a></li>
             </ul>
         </div>
 
